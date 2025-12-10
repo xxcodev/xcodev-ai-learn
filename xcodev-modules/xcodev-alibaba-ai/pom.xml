@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>com.xcode.ai.learn</groupId>
-        <artifactId>xcodev-module</artifactId>
+        <artifactId>xcodev-modules</artifactId>
         <version>${revision}</version>
     </parent>
 

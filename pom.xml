@@ -14,7 +14,7 @@
     </description>
 
     <modules>
-        <module>xcodev-module</module>
+        <module>xcodev-modules</module>
     </modules>
 
     <properties>

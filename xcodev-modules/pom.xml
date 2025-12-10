@@ -7,7 +7,7 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>xcodev-module</artifactId>
+    <artifactId>xcodev-modules</artifactId>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <description>
