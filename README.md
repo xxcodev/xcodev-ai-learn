@@ -17,10 +17,11 @@
 
 ## 模块介绍
 
-| 模块名称                   | 描述          |
-|------------------------|-------------|
-| xcodev-ai-learn        | 项目父工程，管理子模块 |
-| xcodev-ai-dependencies | 所有依赖版本管理    |
-| xcodev-module          | 模块化开发       |
-| xcodev-alibaba-ai      | 阿里巴巴AI框架    |
-| xcodev-open-ai         | OpenAI框架    |
+| 模块名称                                                  | 描述               |
+|-------------------------------------------------------|------------------|
+| xcodev-ai-learn                                       | 项目父工程，管理子模块      |
+| [xcodev-ai-dependencies](xcodev-ai-dependencies)      | 所有依赖版本管理         |
+| [xcodev-modules](xcodev-modules)                      | 模块化开发            |
+| [xcodev-alibaba-ai](xcodev-modules/xcodev-alibaba-ai) | 阿里巴巴AI平台         |
+| [xcodev-open-ai](xcodev-modules/xcodev-open-ai)       | OpenAI平台         |
+| [xcodev-ollama](xcodev-modules/xcodev-ollama)         | xcodev-spring-ai | Ollama 平台 |
