@@ -17,6 +17,7 @@
     <modules>
         <module>xcodev-open-ai</module>
         <module>xcodev-alibaba-ai</module>
+        <module>xcodev-ollama</module>
     </modules>
 
     <properties>

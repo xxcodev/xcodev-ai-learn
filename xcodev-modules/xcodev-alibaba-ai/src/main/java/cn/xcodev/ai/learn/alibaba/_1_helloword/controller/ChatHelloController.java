@@ -20,12 +20,12 @@ public class ChatHelloController {
 
     private ChatModel chatModel;
 
-    @GetMapping("/hello/do_chat")
+    @GetMapping("/do_chat")
     public String doChat(@RequestParam(name = "msg", defaultValue = "你是谁？") String msg) {
         return chatModel.call(msg);
     }
 
-    @GetMapping("/hello/stream_chat")
+    @GetMapping("/stream_chat")
     public Flux<String> streamChat(@RequestParam(name = "msg", defaultValue = "你是谁？") String msg) {
         return chatModel.stream(msg);
     }

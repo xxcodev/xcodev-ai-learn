@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author xcodev
  */
 @SpringBootApplication
-public class AiAlibabaApplication {
+public class AlibabaAiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AiAlibabaApplication.class, args);
+        SpringApplication.run(AlibabaAiApplication.class, args);
     }
 }
