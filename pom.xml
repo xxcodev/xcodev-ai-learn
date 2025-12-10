@@ -14,7 +14,7 @@
     </description>
 
     <modules>
-        <module>xcodev-ai-alibaba</module>
+        <module>xcodev-module</module>
     </modules>
 
     <properties>

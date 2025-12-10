@@ -5,12 +5,12 @@
 
     <parent>
         <groupId>com.xcode.ai.learn</groupId>
-        <artifactId>xcodev-ai-learn</artifactId>
+        <artifactId>xcodev-module</artifactId>
         <version>${revision}</version>
     </parent>
 
     <packaging>jar</packaging>
-    <artifactId>xcodev-ai-alibaba</artifactId>
+    <artifactId>xcodev-alibaba-ai</artifactId>
     <name>${project.artifactId}</name>
 
     <description>
@@ -38,13 +38,4 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
