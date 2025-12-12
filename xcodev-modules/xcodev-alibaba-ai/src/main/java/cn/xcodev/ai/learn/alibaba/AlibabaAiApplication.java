@@ -2,6 +2,7 @@ package cn.xcodev.ai.learn.alibaba;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -9,7 +10,9 @@ import org.springframework.context.annotation.ComponentScan;
  *
  * @author xcodev
  */
-@ComponentScan(basePackages = {"cn.xcodev.ai.learn.alibaba._6_structured_output"})
+
+@EnableCaching
+@ComponentScan(basePackages = {"cn.xcodev.ai.learn.alibaba.v1._7_memory"})
 @SpringBootApplication
 public class AlibabaAiApplication {
 

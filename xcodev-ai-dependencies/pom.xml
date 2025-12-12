@@ -20,12 +20,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
-        <spring-boot.version>3.4.8</spring-boot.version>
-        <spring-ai-alibaba.version>1.0.0.4</spring-ai-alibaba.version>
-        <spring-ai.version>1.0.1</spring-ai.version>
+        <spring-boot.version>3.5.7</spring-boot.version>
+        <spring-ai-alibaba.version>1.1.0.0-RC1</spring-ai-alibaba.version>
+        <spring-ai-alibaba-extensions.version>1.1.0.0-RC1</spring-ai-alibaba-extensions.version>
+        <spring-ai.version>1.1.0</spring-ai.version>
         <lombok.version>1.18.42</lombok.version>
-        <mapstruct.version>1.6.3</mapstruct.version>
-        <hutool.version>5.8.41</hutool.version>
+        <redisson.version>3.52.0</redisson.version>
+        <hutool.version>5.8.42</hutool.version>
+        <commons.lang3.version>3.20.0</commons.lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -39,6 +41,14 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>com.alibaba.cloud.ai</groupId>
                 <artifactId>spring-ai-alibaba-bom</artifactId>
                 <version>${spring-ai-alibaba.version}</version>
@@ -47,11 +57,17 @@
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.ai</groupId>
-                <artifactId>spring-ai-bom</artifactId>
-                <version>${spring-ai.version}</version>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-extensions-bom</artifactId>
+                <version>${spring-ai-alibaba-extensions.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-lang3</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
@@ -61,15 +77,27 @@
             </dependency>
 
             <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-jdk8</artifactId>
-                <version>${mapstruct.version}</version>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-processor</artifactId>
-                <version>${mapstruct.version}</version>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-data-35</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xcode.ai.learn</groupId>
+                <artifactId>xcodev-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xcode.ai.learn</groupId>
+                <artifactId>xcodev-spring-boot-starter-cache</artifactId>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
@@ -77,6 +105,12 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
