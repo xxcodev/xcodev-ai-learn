@@ -3,6 +3,7 @@
 ## 项目介绍
 
 用于AI框架的学习和测试
+如果需要测试指定的包需要需改启动类中的@ComponentScan(basePackages = {"cn.xcodev.ai.learn.alibaba.v1._12_tool"})
 
 ## 开发组件信息
 
@@ -28,5 +29,5 @@
 | [xcodev-open-ai](xcodev-modules/xcodev-open-ai)       | OpenAI平台    |
 | [xcodev-ollama](xcodev-modules/xcodev-ollama)         | Ollama平台    |
 
-## 项目树状图
+
 
