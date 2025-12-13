@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @EnableCaching
-@ComponentScan(basePackages = {"cn.xcodev.ai.learn.alibaba.v1._7_memory"})
+@ComponentScan(basePackages = {"cn.xcodev.ai.learn.alibaba.v1._12_tool"})
 @SpringBootApplication
 public class AlibabaAiApplication {
 

@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
+
+spring:
+  application:
+    name: alibaba-ai
+  ai:
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen3-max
+      embedding:
+        options:
+          model: text-embedding-v4
+    vectorstore:
+      redis:
+        initialize-schema: true
+        index-name: xcodev-index
+        prefix: xcodev
+  data:
+    redis:
+      host: 10.10.0.3
+      port: 6379
+      password: xcodev_528037.
+      database: 0
+      jedis:
+        pool:
+          enabled: true
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0

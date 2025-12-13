@@ -1,43 +1,42 @@
 package com.xcode.ai.learn.config;
 
+
 import cn.hutool.core.util.StrUtil;
-import com.xcode.ai.learn.core.TimeoutRedisCacheManager;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.redis.cache.BatchStrategies;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
-import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.util.StringUtils;
 
-import java.util.Objects;
-
-import static com.xcode.ai.learn.config.XcodevAutoRedisConfig.buildRedisSerializer;
-
-
 /**
- * Cache 配置类，基于 Redis 实现
- * 解决::的问题
  *
  * @author xcodev
  */
-@AutoConfiguration
-@EnableConfigurationProperties({CacheProperties.class, XcodevCacheProperties.class})
-@EnableCaching
-public class XcodevCacheAutoConfiguration {
 
-    /**
-     * RedisCacheConfiguration Bean
-     * <p>
-     * 参考 org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration 的 createConfiguration 方法
-     */
+@EnableCaching
+@AutoConfiguration
+@EnableConfigurationProperties({RedisProperties.class, CacheProperties.class})
+public class RedisAutoConfigure {
+
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setKeySerializer(RedisSerializer.string());
+        redisTemplate.setValueSerializer(RedisSerializer.json());
+        redisTemplate.setHashKeySerializer(RedisSerializer.string());
+        redisTemplate.setHashValueSerializer(RedisSerializer.json());
+        redisTemplate.setConnectionFactory(redisConnectionFactory);
+        redisTemplate.afterPropertiesSet();
+        return redisTemplate;
+    }
+
     @Bean
     @Primary
     public RedisCacheConfiguration redisCacheConfiguration(CacheProperties cacheProperties) {
@@ -51,7 +50,7 @@ public class XcodevCacheAutoConfiguration {
             return cacheName + StrUtil.COLON;
         });
         config = config.serializeValuesWith(
-                RedisSerializationContext.SerializationPair.fromSerializer(buildRedisSerializer()));
+                RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.json()));
         CacheProperties.Redis redisProperties = cacheProperties.getRedis();
         if (redisProperties.getTimeToLive() != null) {
             config = config.entryTtl(redisProperties.getTimeToLive());
@@ -63,18 +62,6 @@ public class XcodevCacheAutoConfiguration {
             config = config.disableKeyPrefix();
         }
         return config;
-    }
-
-    @Bean
-    public RedisCacheManager redisCacheManager(RedisTemplate<String, Object> redisTemplate,
-                                               RedisCacheConfiguration redisCacheConfiguration,
-                                               XcodevCacheProperties xcodevCacheProperties) {
-        // 创建 RedisCacheWriter 对象
-        RedisConnectionFactory connectionFactory = Objects.requireNonNull(redisTemplate.getConnectionFactory());
-        RedisCacheWriter cacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(connectionFactory,
-                BatchStrategies.scan(xcodevCacheProperties.getRedisScanBatchSize()));
-        // 创建 TenantRedisCacheManager 对象
-        return new TimeoutRedisCacheManager(cacheWriter, redisCacheConfiguration);
     }
 
 }
