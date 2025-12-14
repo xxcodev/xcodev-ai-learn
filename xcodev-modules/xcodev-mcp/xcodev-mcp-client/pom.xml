@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.xcodev.ai</groupId>
-        <artifactId>xcodev-mcp-webmvc</artifactId>
+        <artifactId>xcodev-mcp</artifactId>
         <version>${revision}</version>
     </parent>
 

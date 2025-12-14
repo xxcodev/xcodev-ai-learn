@@ -3,22 +3,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.xcodev.ai</groupId>
-        <artifactId>xcodev-mcp-webmvc</artifactId>
+        <artifactId>xcodev-modules</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>xcodev-mcp-server</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>xcodev-mcp</artifactId>
+    <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
     <description>
-        提供MCP服务
+        MCP相关
     </description>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>xcodev-mcp-server</module>
+        <module>xcodev-mcp-client</module>
+    </modules>
+
 </project>

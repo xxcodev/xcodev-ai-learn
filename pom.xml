@@ -16,7 +16,7 @@
     <modules>
         <module>xcodev-modules</module>
         <module>xcodev-framework</module>
-        <module>xcodev-modules/xcodev-mcp-webmvc/xcodev-mcp-client</module>
+        <module>xcodev-modules/xcodev-mcp/xcodev-mcp-client</module>
     </modules>
 
     <properties>

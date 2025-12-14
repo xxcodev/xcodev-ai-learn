@@ -19,15 +19,16 @@
 
 ## 模块介绍
 
-| 模块名称                                            | 描述          |
-|-------------------------------------------------|-------------|
-| xcodev-ai-learn                                 | 项目父工程，管理子模块 |
-| [xcodev-dependencies](xcodev-dependencies)      | 所有依赖版本管理    |
-| [xcodev-modules](xcodev-modules)                | 模块化开发       |
-| [xcodev-framework](xcodev-framework)            | 框架模块        |
+| 模块名称                                                  | 描述          |
+|-------------------------------------------------------|-------------|
+| xcodev-ai-learn                                       | 项目父工程，管理子模块 |
+| [xcodev-dependencies](xcodev-dependencies)            | 所有依赖版本管理    |
+| [xcodev-modules](xcodev-modules)                      | 模块化开发       |
+| [xcodev-framework](xcodev-framework)                  | 框架模块        |
 | [xcodev-alibaba-ai](xcodev-modules/xcodev-alibaba-ai) | 阿里巴巴AI平台    |
-| [xcodev-open-ai](xcodev-modules/xcodev-open-ai) | OpenAI平台    |
-| [xcodev-ollama](xcodev-modules/xcodev-ollama)   | Ollama平台    |
+| [xcodev-open-ai](xcodev-modules/xcodev-open-ai)       | OpenAI平台    |
+| [xcodev-ollama](xcodev-modules/xcodev-ollama)         | Ollama平台    |
+| [[xcodev-mcp](xcodev-modules/xcodev-mcp)]             | MCP         |
 
 
 
