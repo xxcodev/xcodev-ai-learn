@@ -1,0 +1,19 @@
+server:
+  port: 8015
+  servlet:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+spring:
+  ai:
+    mcp:
+      client:
+        type: async
+        request-timeout: 60s
+        toolcallback:
+          enabled: true
+        sse:
+          connections:
+            mcp-server1.url: http://localhost:8014

@@ -12,11 +12,6 @@ spring:
   ai:
     dashscope:
       api-key: ${AI_DASHSCOPE_API_KEY}
-    mcp:
-      server:
-        type: async
-        name: xcodev-mcp-server
-        version: 1.0.0
       embedding:
         options:
           model: text-embedding-v4

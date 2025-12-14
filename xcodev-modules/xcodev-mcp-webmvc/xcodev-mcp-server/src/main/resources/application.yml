@@ -1,0 +1,19 @@
+server:
+  port: 8014
+  servlet:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+spring:
+  application:
+    name: mcp-weather-server
+  # AI相关配置
+  ai:
+    mcp:
+      server:
+        type: async
+        name: mcp-weather-server
+        version: 1.0.0
+

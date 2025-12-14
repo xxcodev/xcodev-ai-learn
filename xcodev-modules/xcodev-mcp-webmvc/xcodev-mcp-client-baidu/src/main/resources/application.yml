@@ -1,0 +1,21 @@
+server:
+  port: 8016
+  servlet:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+
+spring:
+  application:
+    name: mcp-weather-server
+  # AI相关配置
+  ai:
+    mcp:
+      client:
+        request-timeout: 20s
+        toolcallback:
+          enabled: true
+        stdio:
+          servers-configuration: classpath:/mcp-server.json5

@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xcode.ai.learn</groupId>
-    <artifactId>xcodev-ai-learn</artifactId>
+    <groupId>cn.xcodev.ai</groupId>
+    <artifactId>xcodev-ai</artifactId>
     <version>${revision}</version>
 
     <name>${project.artifactId}</name>
@@ -16,6 +16,7 @@
     <modules>
         <module>xcodev-modules</module>
         <module>xcodev-framework</module>
+        <module>xcodev-modules/xcodev-mcp-webmvc/xcodev-mcp-client</module>
     </modules>
 
     <properties>
@@ -35,8 +36,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>cn.xcodev.ai.learn</groupId>
-                <artifactId>xcodev-ai-dependencies</artifactId>
+                <groupId>cn.xcodev.ai</groupId>
+                <artifactId>xcodev-dependencies</artifactId>
                 <version>${revision}</version>
                 <type>pom</type>
                 <scope>import</scope>
