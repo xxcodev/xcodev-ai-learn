@@ -19,6 +19,7 @@
     <modules>
         <module>xcodev-common</module>
         <module>xcodev-spring-boot-starter-cache</module>
+        <module>xcodev-spring-boot-starter-ai</module>
     </modules>
 
     <properties>

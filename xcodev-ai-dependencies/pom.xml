@@ -104,6 +104,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.xcode.ai.learn</groupId>
+                <artifactId>xcodev-spring-boot-starter-ai</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>

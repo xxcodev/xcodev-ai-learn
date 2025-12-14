@@ -1,6 +1,6 @@
 package cn.xcodev.ai.learn.alibaba.v1._1_helloword.controller;
 
-import lombok.AllArgsConstructor;
+import jakarta.annotation.Resource;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +14,10 @@ import reactor.core.publisher.Flux;
  * @author xcodev
  */
 @RestController
-@AllArgsConstructor
 @RequestMapping("/ai/alibaba")
 public class ChatHelloController {
 
+    @Resource(name = "qwenModel")
     private ChatModel chatModel;
 
     @GetMapping("/do_chat")
