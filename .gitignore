@@ -72,5 +72,3 @@ functions/mock
 screenshot
 .firebase
 sessionStore
-
-*.json5
