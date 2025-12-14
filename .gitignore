@@ -72,3 +72,5 @@ functions/mock
 screenshot
 .firebase
 sessionStore
+
+mcp-server.json5
